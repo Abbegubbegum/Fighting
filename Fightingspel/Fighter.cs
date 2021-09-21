@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace Fightingspel
 {
@@ -12,12 +13,17 @@ namespace Fightingspel
 
         private Weapon weapon = new Weapon();
 
-        public Fighter(string n)
+        private List<string> names = new List<string> { "George", "Lucas", "Max", "Balthazar", "Peter", "Cassandra", "Valkyria" };
+
+        Random r = new Random();
+
+
+        public Fighter()
         {
-            name = n;
+            name = names[r.Next(names.Count)];
         }
 
-        public void update()
+        public void Update()
         {
             if (hp <= 0)
             {
